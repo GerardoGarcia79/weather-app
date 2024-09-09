@@ -1,10 +1,11 @@
 import "./App.css";
+import Layout from "./components/Layout";
 
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold">Hello world!</h1>
-    </>
+    <div className="bg-[#e3d8ff] h-screen flex justify-center">
+      <Layout />
+    </div>
   );
 }
 
