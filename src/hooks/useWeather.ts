@@ -3,12 +3,20 @@ import { Weather } from "../App";
 import { useEffect, useState } from "react";
 import { AxiosError, CanceledError } from "axios";
 
-const useData = () => {
+const useWeather = (city?: string) => {
   const [data, setData] = useState<Weather>({
     name: "",
+    main: {
+      temp: 0,
+      humidity: 0,
+    },
+    wind: {
+      speed: 0,
+    },
   });
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const cityName = city ? city : "guadalajara";
 
   useEffect(() => {
     setIsLoading(true);
@@ -17,7 +25,7 @@ const useData = () => {
       .get<Weather>(``, {
         signal: controller.signal,
         params: {
-          q: "guadalajara",
+          q: cityName,
           units: "metric",
         },
       })
@@ -31,8 +39,8 @@ const useData = () => {
         setIsLoading(false);
       });
     return () => controller.abort();
-  }, []);
+  }, [cityName]);
   return { data, error, isLoading };
 };
 
-export default useData;
+export default useWeather;

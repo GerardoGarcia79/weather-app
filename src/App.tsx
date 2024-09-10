@@ -1,16 +1,22 @@
 import "./App.css";
 import Layout from "./components/Layout";
-import useData from "./hooks/useData";
+import useWeather from "./hooks/useWeather";
 
 export interface Weather {
   name: string;
+  main: {
+    temp: number;
+    humidity: number;
+  };
+  wind: {
+    speed: number;
+  };
 }
 
 function App() {
-  const { data, error, isLoading } = useData();
+  const { error, isLoading } = useWeather();
 
   if (error) return <p className="text-red-600 text-2xl">{error}.</p>;
-  console.log(data);
 
   return (
     <div className="bg-[#f6c0ad] h-screen flex justify-center">
