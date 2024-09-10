@@ -11,6 +11,13 @@ export interface Weather {
   wind: {
     speed: number;
   };
+  weather: [
+    {
+      description: string;
+      main: string;
+      id: number;
+    }
+  ];
 }
 
 function App() {

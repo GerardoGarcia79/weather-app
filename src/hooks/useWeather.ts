@@ -13,6 +13,13 @@ const useWeather = (city?: string) => {
     wind: {
       speed: 0,
     },
+    weather: [
+      {
+        description: "",
+        main: "",
+        id: 0,
+      },
+    ],
   });
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
