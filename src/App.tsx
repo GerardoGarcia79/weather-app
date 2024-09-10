@@ -3,7 +3,7 @@ import Layout from "./components/Layout";
 
 function App() {
   return (
-    <div className="bg-[#e3d8ff] h-screen flex justify-center">
+    <div className="bg-[#f6c0ad] h-screen flex justify-center">
       <Layout />
     </div>
   );
