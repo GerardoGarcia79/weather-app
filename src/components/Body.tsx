@@ -9,9 +9,12 @@ const Body = () => {
           alt="Weather condition"
           width="200px"
           height="200px"
+          className="mb-3"
         />
-        <h1>21°c</h1>
-        <h2>New York</h2>
+        <div className="text-center text-white font-bold">
+          <h1 className="text-6xl mb-1">21°c</h1>
+          <h2 className="text-5xl">New York</h2>
+        </div>
       </div>
     </div>
   );
